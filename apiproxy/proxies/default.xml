@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules>
+        <FaultRule name="routeFailed">
+            <Step>
+                <Name>RF-NotFound</Name>
+                <Condition>(fault.name == "RouteFailed") or (fault.name == "ApplicationNotFound")</Condition>
+            </Step>
+        </FaultRule>
+    </FaultRules>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>AssignToken</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="ageCalculatorFlow">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>calculateAge</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/calculateAge") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="studentDelete">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>EV-pathParam</Name>
+                </Step>
+                <Step>
+                    <Name>DeleteBaasEntity</Name>
+                </Step>
+                <Step>
+                    <Condition>(serviceCallResponse.status.code!=200)</Condition>
+                    <Name>RF-NotFound</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>filterAttributes</Name>
+                </Step>
+                <Step>
+                    <Name>AM-BaasResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/student/**") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="studentGet">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>EV-pathParam</Name>
+                </Step>
+                <Step>
+                    <Name>GetBaasEntity</Name>
+                </Step>
+                <Step>
+                    <Condition>(serviceCallResponse.status.code!=200)</Condition>
+                    <Name>RF-RecordNotFound</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>filterAttributes</Name>
+                </Step>
+                <Step>
+                    <Name>AM-BaasResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/student/**") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="studentCreate">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>CreateBaasEntity</Name>
+                </Step>
+                <Step>
+                    <Condition>(serviceCallResponse.status.code!=200)</Condition>
+                    <Name>RF-BadRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>filterAttributes</Name>
+                </Step>
+                <Step>
+                    <Name>AM-BaasResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/student") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="studentUpdate">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>EV-pathParam</Name>
+                </Step>
+                <Step>
+                    <Name>UpdateBaasEntity</Name>
+                </Step>
+                <Step>
+                    <Condition>(serviceCallResponse.status.code!=200)</Condition>
+                    <Name>RF-BadRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>filterAttributes</Name>
+                </Step>
+                <Step>
+                    <Name>AM-BaasResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/student/**") and (request.verb = "PUT")</Condition>
+        </Flow>
+        <Flow name="studentQuery">
+            <Description/>
+            <Request>
+                <Step>
+                    <Condition>(request.queryparam.city==null)</Condition>
+                    <Name>RaiseFaultRequiredHeaders</Name>
+                </Step>
+                <Step>
+                    <Name>KeyValueMap</Name>
+                </Step>
+                <Step>
+                    <Name>QueryBaasEntity</Name>
+                </Step>
+                <Step>
+                    <Condition>(serviceCallResponse.status.code =401)</Condition>
+                    <Name>getUpdateToken</Name>
+                </Step>
+                <Step>
+                    <Condition>(serviceCallResponse.status.code =401)</Condition>
+                    <Name>setTokenVariable</Name>
+                </Step>
+                <Step>
+                    <Condition>(serviceCallResponse.status.code =401)</Condition>
+                    <Name>QueryBaasEntity</Name>
+                </Step>
+                <Step>
+                    <Condition>(serviceCallResponse.status.code !=200)</Condition>
+                    <Name>RF-NotFound</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>filterAttributes</Name>
+                </Step>
+                <Step>
+                    <Name>AM-BaasResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/student") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/apigee</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="routename">
+        <Condition>(proxy.pathsuffix MatchesPath "/xml") and (request.verb = "GET")</Condition>
+        <TargetEndpoint>xmlService</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="routename">
+        <Condition>(proxy.pathsuffix MatchesPath "/orchestration") and (request.verb = "GET")</Condition>
+        <TargetEndpoint>jsonService</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="routename">
+        <Condition>(proxy.pathsuffix MatchesPath "/employee")</Condition>
+        <TargetEndpoint>employeeService</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="NoRoute">
+        <Condition>(proxy.pathsuffix MatchesPath "/calculateAge")</Condition>
+    </RouteRule>
+    <RouteRule name="NoRoute">
+        <Condition>(proxy.pathsuffix MatchesPath "/student/**")</Condition>
+    </RouteRule>
+    <RouteRule name="NoRoute">
+        <Condition>(proxy.pathsuffix MatchesPath "/student")</Condition>
+    </RouteRule>
+</ProxyEndpoint>

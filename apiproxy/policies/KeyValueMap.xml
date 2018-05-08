@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KeyValueMap">
+    <DisplayName>KeyValueMap</DisplayName>
+    <Scope>environment</Scope>
+    <Put>
+        <Key>
+            <Parameter>baasToken</Parameter>
+        </Key>
+        <Value>YWMt22Ylrj-eEee0Prtw1sTG5AAAAVxYzgyFuqmN3PBb1lfaX5JSrSceSoy5EUo</Value>
+    </Put>
+</KeyValueMapOperations>

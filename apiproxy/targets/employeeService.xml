@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="employeeService">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="GetFlow">
+            <Description/>
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>EV-ParseResponse</Name>
+                </Step>
+                <Step>
+                    <Name>GetResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="PostFlow">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>AM-PostRequest</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>EV-ParseResponse</Name>
+                </Step>
+                <Step>
+                    <Name>AM-PostResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>http://mocktarget.apigee.net/echo</URL>
+    </HTTPTargetConnection>
+</TargetEndpoint>

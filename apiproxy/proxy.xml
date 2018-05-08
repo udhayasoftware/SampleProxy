@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="12" name="proxy">
+    <Basepaths>/proxy</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1495023260629</CreatedAt>
+    <CreatedBy>udhayaraagam@gmail.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>proxy</DisplayName>
+    <LastModifiedAt>1520965620952</LastModifiedAt>
+    <LastModifiedBy>udhayaraagam@gmail.com</LastModifiedBy>
+    <ManifestVersion>a0af8d011009efa9e817f1a57749792e26eae45d98974a69b6ecfba3ee3038eda4e456dba2ed6283a13931e13290fdc4fa8d58b8f95dda28467685b0375a4559</ManifestVersion>
+    <Policies>
+        <Policy>AM-BaasResponse</Policy>
+        <Policy>AM-PostRequest</Policy>
+        <Policy>AM-PostResponse</Policy>
+        <Policy>AssignToken</Policy>
+        <Policy>CreateBaasEntity</Policy>
+        <Policy>DeleteBaasEntity</Policy>
+        <Policy>EV-ParseResponse</Policy>
+        <Policy>EV-pathParam</Policy>
+        <Policy>GetBaasEntity</Policy>
+        <Policy>GetResponse</Policy>
+        <Policy>KeyValueMap</Policy>
+        <Policy>QueryBaasEntity</Policy>
+        <Policy>RF-BadRequest</Policy>
+        <Policy>RF-InvalidTarget</Policy>
+        <Policy>RF-NotFound</Policy>
+        <Policy>RF-RecordNotFound</Policy>
+        <Policy>RaiseFaultRequiredHeaders</Policy>
+        <Policy>SC-Comment</Policy>
+        <Policy>SC-GeoCode</Policy>
+        <Policy>UpdateBaasEntity</Policy>
+        <Policy>calculateAge</Policy>
+        <Policy>filterAttributes</Policy>
+        <Policy>getUpdateToken</Policy>
+        <Policy>orchestrationResponse</Policy>
+        <Policy>setTokenVariable</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://ageCalculator.js</Resource>
+        <Resource>jsc://filterAttributes.js</Resource>
+        <Resource>jsc://setTokenVariable.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>employeeService</TargetEndpoint>
+        <TargetEndpoint>jsonService</TargetEndpoint>
+        <TargetEndpoint>xmlService</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

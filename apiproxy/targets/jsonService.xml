@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="jsonService">
+    <Description/>
+    <FaultRules>
+        <FaultRule name="invalid_token_rule">
+            <Step>
+                <Name>RF-BadRequest</Name>
+                <Condition>(fault.name == "UnresolvedVariable")</Condition>
+            </Step>
+        </FaultRule>
+    </FaultRules>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Name>orchestrationResponse</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <Flows>
+        <Flow name="VerifyTarget">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>RF-InvalidTarget</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.queryparam.target != "geo") and (request.queryparam.target != "comment")</Condition>
+        </Flow>
+        <Flow name="GeoCode">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>SC-GeoCode</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.queryparam.target = "geo")</Condition>
+        </Flow>
+        <Flow name="Comment">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>SC-Comment</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(request.queryparam.target = "comment")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://mocktarget.apigee.net/json</URL>
+    </HTTPTargetConnection>
+</TargetEndpoint>

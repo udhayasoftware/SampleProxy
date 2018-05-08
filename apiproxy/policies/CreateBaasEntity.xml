@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="true" enabled="true" name="CreateBaasEntity">
+    <DisplayName>CreateBaasEntity</DisplayName>
+    <Properties/>
+    <Request>
+        <Set>
+            <Headers>
+                <Header name="Content-Type">application/json</Header>
+            </Headers>
+            <Verb>POST</Verb>
+            <Payload>{request.content}</Payload>
+        </Set>
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>serviceCallResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://apibaas-trial.apigee.net/udhayamoorthy/sandbox/students?access_token={baasAuthToken}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

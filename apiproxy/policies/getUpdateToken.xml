@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="getUpdateToken">
+    <DisplayName>getUpdateToken</DisplayName>
+    <Properties/>
+    <Request>
+        <Set>
+            <Headers>
+                <Header name="Content-Type">application/json</Header>
+            </Headers>
+            <Verb>POST</Verb>
+            <Payload>{"grant_type":"password", "username":"testuser", "password":"testpass"}</Payload>
+        </Set>
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>tokenResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://apibaas-trial.apigee.net/udhayamoorthy/sandbox/token</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

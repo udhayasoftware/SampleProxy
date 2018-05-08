@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="SC-Comment">
+    <DisplayName>SC-Comment</DisplayName>
+    <Request variable="commentRequest">
+    </Request>
+    <Response>serviceCallResponse</Response>
+    <Timeout>30000</Timeout>
+    <HTTPTargetConnection>
+        <URL>https://jsonplaceholder.typicode.com/posts/{request.queryparam.post}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest>
+    <Policies>
+        <VersionInfo resourceName="AM-BaasResponse" version="54cf12a242b2dcad0a93ef69da73ae90a9ba409e50ef06bb7e9edc75a496db49346aaba092dc0fbdddfc29c70b499d52c4ab15adde7c85de97275719a173c95d"/>
+        <VersionInfo resourceName="AM-PostRequest" version="17570495a5110f3056df8c60bf34c80b0176c9956938133e34c0c649f2d4c6fccc6f4c5ec4414f03d39df2090909221127e2801244010f443e294eae282f90dc"/>
+        <VersionInfo resourceName="AM-PostResponse" version="02c57db9c82f23307e4e6b425afa4ffcf321203d8e997f1d0860b57edc582d8d48b7dff4fee54c43bda71c14c24833ff7845099070f2d939bf9213498890d641"/>
+        <VersionInfo resourceName="AssignToken" version="b098f835e260b17461ef3b5e0838891e4ad37215af669253a51d3a1a697718d3fe5134f207d9ff3b59a258f5e2e19a08d3ee33cfdf89cc7e72149d3b5a58e8fd"/>
+        <VersionInfo resourceName="CreateBaasEntity" version="3d47cae1d66150f8b5b8eca0275002c19af2b3c04d8c9f7a589547b1784fb0d57ecb1168f60a71b750fdced3b4232c64636b4a1702476bad12bf7053fb615278"/>
+        <VersionInfo resourceName="DeleteBaasEntity" version="71775b4e06518947f7d320ca4e8b42eae30cdcf6a05164f060b6a8c8472b350f7a5a566a75f0f9331c6f820a6c01b831131c8eb62821fbc8e21fb6064e4ff2dd"/>
+        <VersionInfo resourceName="EV-ParseResponse" version="f40e2c7c1a9f43b5774a0868cfa164f2c3c2a74b9bbe2cec7a8651a4aa185fbcacf86b40017d44c85d2cf59ab8423035c691bddf68b6dc71b7686be554f8dbd5"/>
+        <VersionInfo resourceName="EV-pathParam" version="fb5d18c171894095fb4677808b354cec9c7341e5bbe7239dad6702f5233f9e19c5b3ddd31135766df91220510a0bdeff614c2ce4f4d0b9a317bc870d83025921"/>
+        <VersionInfo resourceName="GetBaasEntity" version="af04b045bd23ef7f1e2e6de208dd59fcada29396ef39a647f74f93b40623c8740042c18ccf3f5bb0131ebca683e73c6bbad5057f47fb4979e4c7ab4e24e43baa"/>
+        <VersionInfo resourceName="GetResponse" version="3523b5fbbc3d431618f1a80e815010426bee3cdd7cb10155b0d72ddfda221d3c313a45e3f4560b3e3e036105d0a0d869a2fd7e169092fda2e9c9ae0a3ca74fb2"/>
+        <VersionInfo resourceName="KeyValueMap" version="864278064b7b07048eb3422b00d44c8aaf1fd657c4ea3148aa43f11559d39cabc823fd114da757c9f0dc4b3a7e085ffc402fa4b042c749457db007c0ccfabe4c"/>
+        <VersionInfo resourceName="QueryBaasEntity" version="c93654ab14ffe98602ccd4e59273aa5f57574a462e4872be9015163fa3fdb134a9bb8e26d2e798e3070669f9a241201dd0639180f50d51e7495ce09959bebc9a"/>
+        <VersionInfo resourceName="RF-BadRequest" version="69af5f569aa65538ae1583ef920f7dc7e017c68457417b39b437c5355f88a6c7e5e702f08e68fac1dc208d2622371f34fc98596c493068642d646aac4272dbb5"/>
+        <VersionInfo resourceName="RF-InvalidTarget" version="621db1661517f6f4e35f418cf3e29876570d96e0bba977ecfc99e37b95c62719d4df423af76c137008dd9fe5a858c5e729c57a10c2e2298e2063cf472deafcf8"/>
+        <VersionInfo resourceName="RF-NotFound" version="a79b3e518f02f731ffca8ecc2f11e1dd37fb8dcb2ed98f462486306ca54bd2f1cf0a33bed3b304e80f809b3229667f2a77818644eadc184ed8d39c368c7c34b4"/>
+        <VersionInfo resourceName="RF-RecordNotFound" version="bcb9c51db036bab3341823509bddcbbb97428506968208beb0f2a2b05f1e4c5116b8bfc370de28aa111a75413fd7a50e038d6c7f6abe8749873083569b6c8ecf"/>
+        <VersionInfo resourceName="RaiseFaultRequiredHeaders" version="51ae4bcd169e98119d71087c93c4186a475f55dc7c3f87d1971b91946edbff620ec94b4f0a2a5ea3794253ff3b00afce69e960fed5d1e3db38fb329a3d7753b1"/>
+        <VersionInfo resourceName="SC-Comment" version="3685cfa27ecc3aa511b06692db03e4f78d0df3090267fe0b229ea64f645263ab1f8036dd820499325f6863e77bf0c76d4e52f6fd5dd6d5e6fbb3dafef2cea440"/>
+        <VersionInfo resourceName="SC-GeoCode" version="28aab75d9c78d7c5bc9d94452c9f1bff6663a40b9dffbd4281e855339078764a94381e86d7fef8644e1dfbf4d261bb7bec2b2ef0345d828c32b2b75fe6ef4efb"/>
+        <VersionInfo resourceName="UpdateBaasEntity" version="b075a37e9d6c18450a3beeea0ab908137d8903df82afe30b597e80738f0f2dba9299e4773831d695cf5cc9ae8c4a6e82c2decc0aa67e2a83ad2d49ce11eac143"/>
+        <VersionInfo resourceName="calculateAge" version="71d5332f5f36885ba595ecac0b6bf5a2ea57dfe931607ca531745100e5efa68e2eaa8759b88862c09f208bc8696bba84d84099899c33fdb98a01115da75c5d6f"/>
+        <VersionInfo resourceName="filterAttributes" version="734d6bcd364324c899e19f5eaf8457283468f59e51deef3f9b5c2551cbccdff2470a7b7e18ccfd71579469129aa573f6372120a4e4b78b45c5d3cf2362ae0f23"/>
+        <VersionInfo resourceName="getUpdateToken" version="357c7d610acb4ac2dfbb12d8d76103f42473d91fe2dd7d4f4dc0f50c2b53eceb3f327a57cca0330261eed938dfc51826cf22bdef2bd1232259b53171e5a7f40d"/>
+        <VersionInfo resourceName="orchestrationResponse" version="d58d97c8d2aad32109fa237317a29c163ec685e9a7dfcaf445d89f1b5c21afb37542646acb7144624e968a32570c035c5597818d317fb128ece939f92924fe22"/>
+        <VersionInfo resourceName="setTokenVariable" version="8b6eb12a1074851b291fa70a93accc23f2d9137fbf37930a6483b2ee88a92254dbae87bf3babb77eef3c9b940494628643b122453fc51353c3b481627c3abb1b"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="bc4ee496d967e1306b21a9054b0b4701d123a8849488a04587d45331a4d04cde1b076e8d36a7f1191b83c338ea1b2d6b1a80e4cc9b36c009cd92aec4b98ae80e"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="jsc://ageCalculator.js" version="2ef01c507a57e853317cfae8f546e74f4152b28dba4ea59e5e0a078740adc426beea8ac217723662d97e18cbd388faf9cb92e8d35335b955114e68120446340f"/>
+        <VersionInfo resourceName="jsc://filterAttributes.js" version="e40a50e29feb9d86e3442ce21734f211e8efcbd5d1e89b42f555bd660d534af7151c71411508053f73dc76f4acd1630591911efe3ed71939a9e59991663b41b5"/>
+        <VersionInfo resourceName="jsc://setTokenVariable.js" version="561274a48c3c6c570964e5d823bafe480b12cec37fc4614f0b56d841bf4b2365346f5d2c8fb397ce421054a781347ea83e90c7de4b87cbf94002e386b57d024e"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints>
+        <VersionInfo resourceName="employeeService" version="c257a0ef364572089f9355ceb064d75ebcc8d096f692fdcbb2244dab5aca5ece1b7fab4f012d314dc9c1c43297a9bc506a85cc069ebfe731ee67b55c4150b65d"/>
+        <VersionInfo resourceName="jsonService" version="bcc12d0868153f3d40a8325d6d64b34ff09c51fae7fa5195b80e862bd990dcbc73a6372a4f2ebddea4f7efb07fbe06a41361c62e073d9f5c13e2fb132d170a15"/>
+        <VersionInfo resourceName="xmlService" version="ab137e636bece63fc8f8ecce99578a4bbb6b5831d053be35b8d015c0b32bee3da208331195c315a8bcb65ec927438cc909aab654f5702fddeb4766b80615bdd5"/>
+    </TargetEndpoints>
+</Manifest>

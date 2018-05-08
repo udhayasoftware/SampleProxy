@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="QueryBaasEntity">
+    <DisplayName>QueryBaasEntity</DisplayName>
+    <Request variable="queryRequest"/>
+    <Response>serviceCallResponse</Response>
+    <Timeout>30000</Timeout>
+    <HTTPTargetConnection>
+        <Properties>
+            <Property name="success.codes">200,401</Property>
+        </Properties>
+        <URL>https://apibaas-trial.apigee.net/udhayamoorthy/sandbox/students?ql=address.city='{request.queryparam.city}'&amp;access_token={baasAuthToken}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

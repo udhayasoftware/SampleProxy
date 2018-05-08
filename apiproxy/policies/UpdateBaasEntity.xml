@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="UpdateBaasEntity">
+    <DisplayName>UpdateBaasEntity</DisplayName>
+    <Properties/>
+    <Request>
+        <Set>
+            <Headers>
+                <Header name="Content-Type">application/json</Header>
+            </Headers>
+            <Verb>PUT</Verb>
+            <Payload>{request.content}</Payload>
+        </Set>
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>serviceCallResponse</Response>
+    <HTTPTargetConnection>
+        <Properties>
+            <Property name="success.codes">200,401</Property>
+        </Properties>
+        <URL>https://apibaas-trial.apigee.net/udhayamoorthy/sandbox/students/{urirequest.pathQueryKey}?access_token={baasAuthToken}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

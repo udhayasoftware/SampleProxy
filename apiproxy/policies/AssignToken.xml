@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AssignToken">
+    <DisplayName>AssignToken</DisplayName>
+    <AssignVariable>
+        <Name>baasAuthToken</Name>
+        <Value>YWMtthqamCbrEeiTDX0EHk7K2QAAAWJEp2k0ETzFsIS9LcDArCNgCJbpbZSkwMM</Value>
+    </AssignVariable>
+</AssignMessage>

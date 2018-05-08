@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="EV-ParseResponse">
+    <DisplayName>EV-ParseResponse</DisplayName>
+    <JSONPayload>
+        <Variable name="host">
+            <JSONPath>$.headers.host</JSONPath>
+        </Variable>
+        <Variable name="method">
+            <JSONPath>$.method</JSONPath>
+        </Variable>
+        <Variable name="body">
+            <JSONPath>$.body</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <Source>response</Source>
+</ExtractVariables>
